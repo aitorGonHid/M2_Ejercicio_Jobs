@@ -17,4 +17,7 @@ public class Boss extends Person {
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_50));
 	}	
+	public static int getSalarioMin() {
+		return SALARIO_MIN;
+	}
 }

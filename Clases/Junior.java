@@ -18,5 +18,13 @@ public class Junior extends Employee{
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
 	}
+
+	public static int getSalarioMin() {
+		return SALARIO_MIN;
+	}
+
+	public static int getSalarioMax() {
+		return SALARIO_MAX;
+	}
 	
 }

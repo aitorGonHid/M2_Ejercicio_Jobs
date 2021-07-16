@@ -18,5 +18,11 @@ public class Manager extends Person {
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_10));
 	}
-	
+	public static int getSalarioMin() {
+		return SALARIO_MIN;
+	}
+
+	public static int getSalarioMax() {
+		return SALARIO_MAX;
+	}
 }

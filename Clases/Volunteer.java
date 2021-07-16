@@ -16,4 +16,9 @@ public class Volunteer extends Person {
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_100_NEGATIVO));
 	}
+
+	public static int getSalarioMax() {
+		return SALARIO_MAX;
+	}
+	
 }
