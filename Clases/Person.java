@@ -1,6 +1,6 @@
 package Clases;
 
-public abstract class Person {
+public abstract class Person implements BonusSueldo {
 	
 	//Atributos
 	private String nombre;
@@ -101,6 +101,13 @@ public abstract class Person {
 	// Bruto anual
 	public double brutoAnual (int meses) {
 		return sueldo * meses; // Simplemente el sueldo por el numeor de meses (por si hay mas pagas o no)
+	}
+	
+	public double getBonus() {
+		// Si el trabajador es voluntario no tendrá bonus de sueldo
+		if (this instanceof Volunteer) return 0;
+		// El resto de trabajadores pueden recibir un bono del 10% del sueldo anual
+		return brutoAnual(14)*0.1;
 	}
 	
 }
