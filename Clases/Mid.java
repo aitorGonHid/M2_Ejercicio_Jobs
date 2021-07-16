@@ -2,11 +2,12 @@ package Clases;
 
 public class Mid extends Employee{
 
-	// Constante
+	// Constantes
 	final private double REDU = -0.1;
 	private final static int SALARIO_MIN = 1800;
 	private final static int SALARIO_MAX = 2500;
-	// Construcotres
+	private final static double IRPF_MID = 0.15;
+	// Constructres
 	public Mid () {
 		super ();
 		setSueldo(extraSueldo(getSueldo(), REDU));
@@ -17,6 +18,7 @@ public class Mid extends Employee{
 		super(nombre, apellido, sueldo, id);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
+		setIrpf(IRPF_MID);
 	}
 	public static int getSalarioMin() {
 		return SALARIO_MIN;
