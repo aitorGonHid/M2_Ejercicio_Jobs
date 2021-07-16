@@ -65,4 +65,16 @@ public abstract class Person {
 		return getSueldo() * (1 + porcentaje);
 	}
 	
+	public boolean validarSueldo (double min, double max) {
+		// Comprueba si el sueldo esta dentro del rango pasado como parametro
+		boolean valid = (getSueldo() <= min && getSueldo() <= max) ? true : false;
+		return valid;
+	}
+	
+	public boolean validarSueldo (double min) {
+		// Comprueba si el sueldo es igual o superior al valor mínimo
+		boolean valid = (getSueldo() <= min) ? true : false;
+		return valid;
+	}
+	
 }
