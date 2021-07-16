@@ -13,9 +13,9 @@ public class Manager extends Person {
 		setSueldo(extraSueldo(getSueldo(), AUMENTO_10));
 	}
 
-	public Manager(String nombre, String apellido, double sueldo, int id) {
+	public Manager(String nombre, String apellido, double sueldo) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
-		super(nombre, apellido, sueldo, id);
+		super(nombre, apellido, sueldo);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_10));
 		setIrpf(IRPF_MANAGER);
@@ -27,4 +27,9 @@ public class Manager extends Person {
 	public static int getSalarioMax() {
 		return SALARIO_MAX;
 	}
+
+	public static double getIrpfManager() {
+		return IRPF_MANAGER;
+	}
+	
 }

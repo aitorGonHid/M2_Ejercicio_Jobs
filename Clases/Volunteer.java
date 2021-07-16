@@ -12,9 +12,9 @@ public class Volunteer extends Person {
 		setSueldo(extraSueldo(getSueldo(), AUMENTO_100_NEGATIVO));
 	}
 
-	public Volunteer(String nombre, String apellido, double sueldo, int id, boolean ayuda) {
+	public Volunteer(String nombre, String apellido, double sueldo, boolean ayuda) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
-		super(nombre, apellido, sueldo, id);
+		super(nombre, apellido, sueldo);
 		this.ayuda = ayuda;
 		// Incrementa el sueldo segun su categoria
 		if (ayuda) {

@@ -12,10 +12,10 @@ public abstract class Person implements BonusSueldo {
 	
 	//Constructores
 	public Person () {
-		this("Max", " Power", 0, 0);
+		this("Max", " Power", 0);
 	}
 	
-	public Person(String nombre, String apellido, double sueldo, int id) {
+	public Person(String nombre, String apellido, double sueldo) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.sueldo = sueldo;
@@ -70,10 +70,10 @@ public abstract class Person implements BonusSueldo {
 
 	// Metodos
 	public double extraSueldo(double sueldo, double porcentaje) {
-		// Si es una reduccion
-		if (porcentaje < 0) return sueldo * (1 - porcentaje);
-		// Si es un aumento
-		return sueldo * (1 + porcentaje);
+//		// Si es una reduccion
+//		if (porcentaje < 0) return sueldo - (sueldo * porcentaje);
+//		// Si es un aumento
+		return sueldo + (sueldo * porcentaje);
 	}
 	
 	public boolean validarSueldo (double min, double max) {
@@ -89,13 +89,13 @@ public abstract class Person implements BonusSueldo {
 	}
 	
 	// Calcula el sueldo neto mensual
-	public double netoMensual () {
-		return sueldo - (sueldo * getIrpf()); // Multiplicando el sueldo por el irpf (ya esta definido en 0.X para no dividir entre 100)
+	public double netoMensual (double irpf) {
+		return sueldo - (sueldo * irpf); // Multiplicando el sueldo por el irpf (ya esta definido en 0.X para no dividir entre 100)
 	}
 	
 	// Calcular sueldo neto anual
 	public double netoAnual (double irpf, int meses) {
-		return netoMensual() * meses; // A partir del neto mensual multiplicamos por los meses (por si hay mas pagas o no)
+		return netoMensual(irpf) * meses; // A partir del neto mensual multiplicamos por los meses (por si hay mas pagas o no)
 	}
 	
 	// Bruto anual
