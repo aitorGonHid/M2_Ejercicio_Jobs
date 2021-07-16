@@ -12,10 +12,10 @@ public abstract class Person implements BonusSueldo {
 	
 	//Constructores
 	public Person () {
-		this("Max", " Power", 0, 0);
+		this("Max", " Power", 0);
 	}
 	
-	public Person(String nombre, String apellido, double sueldo, int id) {
+	public Person(String nombre, String apellido, double sueldo) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.sueldo = sueldo;

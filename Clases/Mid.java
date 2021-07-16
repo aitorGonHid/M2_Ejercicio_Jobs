@@ -13,9 +13,9 @@ public class Mid extends Employee{
 		setSueldo(extraSueldo(getSueldo(), REDU));
 	}
 		
-	public Mid(String nombre, String apellido, double sueldo, int id) {
+	public Mid(String nombre, String apellido, double sueldo) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
-		super(nombre, apellido, sueldo, id);
+		super(nombre, apellido, sueldo);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
 		setIrpf(IRPF_MID);
