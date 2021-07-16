@@ -4,6 +4,8 @@ public class Senior extends Employee{
 
 	// Constante
 	final private double REDU = -0.1;
+	private final static int SALARIO_MIN = 2700;
+	private final static int SALARIO_MAX = 4000;
 	// Construcotres
 	public Senior () {
 		super ();
@@ -16,5 +18,11 @@ public class Senior extends Employee{
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
 	}
-	
+	public static int getSalarioMin() {
+		return SALARIO_MIN;
+	}
+
+	public static int getSalarioMax() {
+		return SALARIO_MAX;
+	}
 }

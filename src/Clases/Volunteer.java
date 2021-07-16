@@ -3,6 +3,7 @@ package Clases;
 public class Volunteer extends Person {
 	//Atributos
 	private final static double AUMENTO_100_NEGATIVO = -1;
+	private final static int SALARIO_MAX = 0;
 	//Constructores
 	public Volunteer() {
 		super();
@@ -15,4 +16,9 @@ public class Volunteer extends Person {
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_100_NEGATIVO));
 	}
+
+	public static int getSalarioMax() {
+		return SALARIO_MAX;
+	}
+	
 }

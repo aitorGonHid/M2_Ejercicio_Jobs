@@ -4,6 +4,8 @@ public class Junior extends Employee{
 	
 	// Constante
 	final private double REDU = -0.15;
+	private final static int SALARIO_MIN = 900;
+	private final static int SALARIO_MAX = 1600;
 	// Construcotres
 	public Junior () {
 		super ();
@@ -15,6 +17,14 @@ public class Junior extends Employee{
 		super(nombre, apellido, sueldo, id);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
+	}
+
+	public static int getSalarioMin() {
+		return SALARIO_MIN;
+	}
+
+	public static int getSalarioMax() {
+		return SALARIO_MAX;
 	}
 	
 }
