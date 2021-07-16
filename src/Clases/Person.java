@@ -59,6 +59,9 @@ public abstract class Person {
 	}
 	
 	public double extraSueldo(double sueldo, double porcentaje) {
+		// Si es una reduccion
+		if (porcentaje < 0) return getSueldo() * (1 - porcentaje);
+		// Si es un aumento
 		return getSueldo() * (1 + porcentaje);
 	}
 	
