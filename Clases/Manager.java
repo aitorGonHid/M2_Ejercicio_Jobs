@@ -6,6 +6,7 @@ public class Manager extends Person {
 	private final static double AUMENTO_10 = 0.1;
 	private final static int SALARIO_MIN = 3000;
 	private final static int SALARIO_MAX = 5000;
+	private final static double IRPF_MANAGER = 0.26;
 	//Constructores
 	public Manager() {
 		super();
@@ -17,6 +18,7 @@ public class Manager extends Person {
 		super(nombre, apellido, sueldo, id);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_10));
+		setIrpf(IRPF_MANAGER);
 	}
 	public static int getSalarioMin() {
 		return SALARIO_MIN;

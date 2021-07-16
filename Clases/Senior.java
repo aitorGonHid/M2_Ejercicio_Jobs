@@ -6,6 +6,7 @@ public class Senior extends Employee{
 	final private double REDU = -0.1;
 	private final static int SALARIO_MIN = 2700;
 	private final static int SALARIO_MAX = 4000;
+	private final static double IRPF_SENIOR = 0.24;
 	// Construcotres
 	public Senior () {
 		super ();
@@ -17,6 +18,7 @@ public class Senior extends Employee{
 		super(nombre, apellido, sueldo, id);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
+		setIrpf(IRPF_SENIOR);
 	}
 	public static int getSalarioMin() {
 		return SALARIO_MIN;
