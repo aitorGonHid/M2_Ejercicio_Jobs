@@ -67,13 +67,13 @@ public abstract class Person {
 	
 	public boolean validarSueldo (double min, double max) {
 		// Comprueba si el sueldo esta dentro del rango pasado como parametro
-		boolean valid = (getSueldo() <= min && getSueldo() <= max) ? true : false;
+		boolean valid = (getSueldo() >= min && getSueldo() <= max) ? true : false;
 		return valid;
 	}
 	
 	public boolean validarSueldo (double min) {
 		// Comprueba si el sueldo es igual o superior al valor mínimo
-		boolean valid = (getSueldo() <= min) ? true : false;
+		boolean valid = (getSueldo() >= min) ? true : false;
 		return valid;
 	}
 	
