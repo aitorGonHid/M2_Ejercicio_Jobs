@@ -1,20 +1,20 @@
 package Clases;
 
 public class Junior extends Employee{
-
-	// Constante
-	private final double REDU = 0.15;
 	
-	// Constructores	
+	// Constante
+	final private double REDU = -0.15;
+	// Construcotres
 	public Junior () {
-		super ("Max", " Power", 0, 0);
-		this.reduccion = REDU;
+		super ();
+		setSueldo(extraSueldo(getSueldo(), REDU));
 	}
-
-	@Override
-	public String toString() {
-		return "Junior [getReduccion=" + getReduccion() + ", getNombre()=" + getNombre() + ", getApellido()=" + 
-				getApellido() + ", getSueldo()=" + getSueldo() + ", getId()=" + getId() + "]";
+	
+	public Junior(String nombre, String apellido, double sueldo, int id) {
+		// Llama al constructor padre y asigna un valor provisional a sueldo
+		super(nombre, apellido, sueldo, id);
+		// Incrementa el sueldo segun su categoria
+		setSueldo(extraSueldo(sueldo, REDU));
 	}
 	
 }

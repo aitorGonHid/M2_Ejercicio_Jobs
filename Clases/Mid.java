@@ -3,18 +3,18 @@ package Clases;
 public class Mid extends Employee{
 
 	// Constante
-	private final double REDU = 0.10;
-	
-	// Constructores	
+	final private double REDU = -0.1;
+	// Construcotres
 	public Mid () {
-		super ("Max", " Power", 0, 0);
-		this.reduccion = REDU;
+		super ();
+		setSueldo(extraSueldo(getSueldo(), REDU));
 	}
-
-	@Override
-	public String toString() {
-		return "Junior [getReduccion=" + getReduccion() + ", getNombre()=" + getNombre() + ", getApellido()=" + 
-				getApellido() + ", getSueldo()=" + getSueldo() + ", getId()=" + getId() + "]";
+		
+	public Mid(String nombre, String apellido, double sueldo, int id) {
+		// Llama al constructor padre y asigna un valor provisional a sueldo
+		super(nombre, apellido, sueldo, id);
+		// Incrementa el sueldo segun su categoria
+		setSueldo(extraSueldo(sueldo, REDU));
 	}
 	
 }

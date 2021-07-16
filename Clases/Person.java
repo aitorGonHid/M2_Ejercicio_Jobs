@@ -7,7 +7,7 @@ public abstract class Person {
 	private String apellido;
 	private double sueldo;
 	private int id;
-	private static int nextId = 1; // Para ir incrementando la id del empleado automatica
+	private static int nextId = 1;
 	
 	//Constructores
 	public Person () {
@@ -18,7 +18,7 @@ public abstract class Person {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.sueldo = sueldo;
-		setId(); // in
+		setId();
 	}
 
 	public String getNombre() {
@@ -51,13 +51,18 @@ public abstract class Person {
 
 	public void setId() {
 		this.id = nextId;
-		incNextId(); 
+		incNextId();
 	}
 
 	public static void incNextId() {
-		nextId++; // Aqui se incrementa el id
+		nextId++;
 	}
 	
-	
+	public double extraSueldo(double sueldo, double porcentaje) {
+		// Si es una reduccion
+		if (porcentaje < 0) return getSueldo() * (1 - porcentaje);
+		// Si es un aumento
+		return getSueldo() * (1 + porcentaje);
+	}
 	
 }
