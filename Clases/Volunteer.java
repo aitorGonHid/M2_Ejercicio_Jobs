@@ -3,6 +3,7 @@ package Clases;
 public class Volunteer extends Person {
 	//Atributos
 	private final static double AUMENTO_100_NEGATIVO = -1;
+	private final static int SALARIO_MAX = 0;
 	//Constructores
 	public Volunteer() {
 		super();

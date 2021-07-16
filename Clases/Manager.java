@@ -4,6 +4,8 @@ public class Manager extends Person {
 	
 	//Atributos
 	private final static double AUMENTO_10 = 0.1;
+	private final static int SALARIO_MIN = 3000;
+	private final static int SALARIO_MAX = 5000;
 	//Constructores
 	public Manager() {
 		super();

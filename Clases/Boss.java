@@ -4,6 +4,7 @@ public class Boss extends Person {
 	
 	//Atributos
 	private final static double AUMENTO_50 = 0.5;
+	private final static int SALARIO_MIN = 8000;
 	//Constructores
 	public Boss() {
 		super();

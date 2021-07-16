@@ -4,6 +4,8 @@ public class Senior extends Employee{
 
 	// Constante
 	final private double REDU = -0.1;
+	private final static int SALARIO_MIN = 2700;
+	private final static int SALARIO_MAX = 4000;
 	// Construcotres
 	public Senior () {
 		super ();

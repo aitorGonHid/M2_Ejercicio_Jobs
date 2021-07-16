@@ -4,6 +4,8 @@ public class Junior extends Employee{
 	
 	// Constante
 	final private double REDU = -0.15;
+	private final static int SALARIO_MIN = 900;
+	private final static int SALARIO_MAX = 1600;
 	// Construcotres
 	public Junior () {
 		super ();
