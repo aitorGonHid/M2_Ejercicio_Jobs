@@ -58,6 +58,8 @@ public abstract class Person {
 		nextId++;
 	}
 	
-	
+	public double extraSueldo(double sueldo, double porcentaje) {
+		return getSueldo() * (1 + porcentaje);
+	}
 	
 }
