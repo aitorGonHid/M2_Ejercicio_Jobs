@@ -12,18 +12,18 @@ public class Boss extends Person {
 		setSueldo(extraSueldo(getSueldo(), AUMENTO_50));
 	}
 
-	public Boss(String nombre, String apellido, double sueldo) {
+	public Boss(String nombre, String apellido, double sueldo, boolean bonus) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
-		super(nombre, apellido, sueldo);
+		super(nombre, apellido, sueldo, bonus);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, AUMENTO_50));
 		setIrpf(IRPF_BOSS);
 	}	
-	public static int getSalarioMin() {
+	public int getSalarioMin() {
 		return SALARIO_MIN;
 	}
 
-	public static double getIrpfBoss() {
+	public double getIrpfBoss() {
 		return IRPF_BOSS;
 	}
 	

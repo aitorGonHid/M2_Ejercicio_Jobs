@@ -13,23 +13,23 @@ public class Junior extends Employee{
 		setSueldo(extraSueldo(getSueldo(), REDU));
 	}
 	
-	public Junior(String nombre, String apellido, double sueldo) {
+	public Junior(String nombre, String apellido, double sueldo, boolean bonus) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
-		super(nombre, apellido, sueldo);
+		super(nombre, apellido, sueldo, bonus);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
 		setIrpf(IRPF_JUNIOR);
 	}
 
-	public static int getSalarioMin() {
+	public int getSalarioMin() {
 		return SALARIO_MIN;
 	}
 
-	public static int getSalarioMax() {
+	public int getSalarioMax() {
 		return SALARIO_MAX;
 	}
 
-	public static double getIrpfJunior() {
+	public double getIrpfJunior() {
 		return IRPF_JUNIOR;
 	}
 	

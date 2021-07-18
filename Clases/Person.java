@@ -1,28 +1,31 @@
 package Clases;
 
-public abstract class Person implements BonusSueldo {
+public abstract class Person {
 	
 	//Atributos
-	private String nombre;
-	private String apellido;
-	private double sueldo;
-	private int id;
-	private double irpf;
+	protected String nombre;
+	protected String apellido;
+	protected double sueldo;
+	protected int id;
+	protected double irpf;
+	protected boolean bonus;
 	private static int nextId = 1;
 	
 	//Constructores
 	public Person () {
-		this("Max", " Power", 0);
+		this("Max", " Power", 0, false);
 	}
 	
-	public Person(String nombre, String apellido, double sueldo) {
+	public Person(String nombre, String apellido, double sueldo, boolean bonus) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.sueldo = sueldo;
 		this.irpf = 0;
-		setId();
+		this.bonus = bonus;
+		setId(); // Id autoincremental
 	}
 
+	// Getters setters
 	public String getNombre() {
 		return nombre;
 	}
@@ -53,9 +56,8 @@ public abstract class Person implements BonusSueldo {
 
 	public void setId() {
 		this.id = nextId;
-		incNextId();
+		incNextId(); // Aqui se autoincrementa (pijadas de aitor xd)
 	}
-
 	public static void incNextId() {
 		nextId++;
 	}
@@ -68,20 +70,25 @@ public abstract class Person implements BonusSueldo {
 		this.irpf = irpf;
 	}
 
+	public void setBonus(boolean bonus) {
+		this.bonus = bonus;
+	}
+	public boolean isBonus() {
+		return bonus;
+	}
+
 	// Metodos
+	// Para el sueldo extra (el sueldo va a ser o positivo o negativo, pero eso ya esta en sus respectivas clases)
 	public double extraSueldo(double sueldo, double porcentaje) {
-//		// Si es una reduccion
-//		if (porcentaje < 0) return sueldo - (sueldo * porcentaje);
-//		// Si es un aumento
 		return sueldo + (sueldo * porcentaje);
 	}
-	
+	// Para validar el sueldo
 	public boolean validarSueldo (double min, double max) {
 		// Comprueba si el sueldo esta dentro del rango pasado como parametro
 		boolean valid = (sueldo >= min && sueldo <= max) ? true : false;
 		return valid;
 	}
-	
+	// Poliformismo
 	public boolean validarSueldo (double min) {
 		// Comprueba si el sueldo es igual o superior al valor mínimo
 		boolean valid = (sueldo >= min) ? true : false;
@@ -95,19 +102,17 @@ public abstract class Person implements BonusSueldo {
 	
 	// Calcular sueldo neto anual
 	public double netoAnual (double irpf, int meses) {
-		return netoMensual(irpf) * meses; // A partir del neto mensual multiplicamos por los meses (por si hay mas pagas o no)
+		return brutoAnual(meses) - (brutoAnual(meses) * irpf); // A partir del bruto anual (por si tiene bonus) le rstamos el irpf
 	}
 	
 	// Bruto anual
 	public double brutoAnual (int meses) {
-		return sueldo * meses; // Simplemente el sueldo por el numeor de meses (por si hay mas pagas o no)
-	}
-	
-	public double getBonus() {
-		// Si el trabajador es voluntario no tendrá bonus de sueldo
-		if (this instanceof Volunteer) return 0;
-		// El resto de trabajadores pueden recibir un bono del 10% del sueldo anual
-		return brutoAnual(14)*0.1;
+		if (isBonus()) {
+			return sueldo * meses + (sueldo * meses * 0.1); // // Simplemente el sueldo por el numeor de meses y el aumento del 10%
+		}
+		else {
+			return sueldo * meses;// Simplemente el sueldo por el numeor de meses
+		} 
 	}
 	
 }

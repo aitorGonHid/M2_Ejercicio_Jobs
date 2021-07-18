@@ -13,22 +13,22 @@ public class Senior extends Employee{
 		setSueldo(extraSueldo(getSueldo(), REDU));
 	}
 		
-	public Senior(String nombre, String apellido, double sueldo) {
+	public Senior(String nombre, String apellido, double sueldo, boolean bonus) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
-		super(nombre, apellido, sueldo);
+		super(nombre, apellido, sueldo, bonus);
 		// Incrementa el sueldo segun su categoria
 		setSueldo(extraSueldo(sueldo, REDU));
 		setIrpf(IRPF_SENIOR);
 	}
-	public static int getSalarioMin() {
+	public int getSalarioMin() {
 		return SALARIO_MIN;
 	}
 
-	public static int getSalarioMax() {
+	public int getSalarioMax() {
 		return SALARIO_MAX;
 	}
 
-	public static double getIrpfSenior() {
+	public double getIrpfSenior() {
 		return IRPF_SENIOR;
 	}
 	
