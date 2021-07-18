@@ -1,0 +1,5 @@
+Cambios:
+- las constantes de salario min/max son publicas y static para tener acceso sin haber instanciado un objeto.
+- los getters de salario min/max ya no son necesarios.
+- las clase workerFactory no se usará ya que no he conseguido aplicar el patron simple factory correctamente, al devolver objetos de tipo estatico persona y no tener acceso a los metodos y atributos propios de la subclase. Se deberia hacer downcasting pero complicaba mas de lo necesario la aplicacion o no he sabido implementarlo bien
+- También hay errores cuando se crea un voluntario (no se le pone el atributo ayuda a true) probablemente por el constructor.

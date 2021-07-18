@@ -4,7 +4,7 @@ public abstract class Employee extends Person {
 	
 	
 	// Constante
-//	final private double REDU = -0.15;
+	//	final private double REDU = -0.15;
 	// Construcotres
 	public Employee () {
 		super ();

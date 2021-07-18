@@ -3,21 +3,20 @@ package Clases;
 public class Mid extends Employee{
 
 	// Constantes
-	final private double REDU = -0.1;
-	private final static int SALARIO_MIN = 1800;
-	private final static int SALARIO_MAX = 2500;
-	private final static double IRPF_MID = 0.15;
+	public final static double REDU = -0.1;
+	public final static int SALARIO_MIN = 1800;
+	public final static int SALARIO_MAX = 2500;
+	public final static double IRPF_MID = 0.15;
 	// Constructres
 	public Mid () {
 		super ();
-		setSueldo(extraSueldo(getSueldo(), REDU));
 	}
 		
 	public Mid(String nombre, String apellido, double sueldo) {
 		// Llama al constructor padre y asigna un valor provisional a sueldo
 		super(nombre, apellido, sueldo);
 		// Incrementa el sueldo segun su categoria
-		setSueldo(extraSueldo(sueldo, REDU));
+		setSueldo(extraSueldo(REDU));
 		setIrpf(IRPF_MID);
 	}
 	public static int getSalarioMin() {
